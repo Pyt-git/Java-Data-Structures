@@ -1,6 +1,11 @@
 # Java-Data-Structures
 
-This repository contains implementation of custom data structure frameworks, inspired from foundational Java (ArrayLists, LinkedLists, ...). Such frameworks are built using object oriented programming (OOP). 
+This repository contains data-structure frameworks implemented from first principles using Java as the language. This repository will start with the implementation of commonly-used foundational data structures. It then concludes with custom data-structure frameworks inspired by the foundational ones. 
 
-Key frameworks implemented in this repository are to be determined. 
+Foundational data structures in this repository include: 
+- ArrayList;
+- LinkedList;
+- Stack;
+- Hash maps, and others.
 
+Custom data structures remain to be determined. 
