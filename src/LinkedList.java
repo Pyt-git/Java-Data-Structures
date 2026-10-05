@@ -1,14 +1,14 @@
-private static class Node<E> {
-  E data; 
-  Node<E> next; 
-  Node<E> prev; 
-
-  Node(E data) {
-    this.data = data; 
-  }
-}
-
 public class MyLinkedList<E> {
+  private static class Node<E> {
+    E data; 
+    Node<E> next; 
+    Node<E> prev; 
+
+    Node(E data) {
+      this.data = data; 
+    }
+  }
+
   private Node<E> head; 
   private Node<E> tail; 
   private int size; 
