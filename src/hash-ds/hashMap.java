@@ -27,7 +27,7 @@ public class MyHashMap<K, V> {
     return Math.abs(key.hashCode() % capacity); 
   }
 
-  public void put(K key, V value) {
+  public V put(K key, V value) {
     int index = hash(key); 
     Node<K, V> head = buckets[index]; 
 
