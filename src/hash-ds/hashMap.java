@@ -103,4 +103,16 @@ public class MyHashMap<K, V> {
   public int size() {
     return size; 
   }
-}  
+
+  public boolean containsKey(K key) {
+    int index = hash(key); 
+    Node<K, V> current = buckets[index]; 
+
+    while (current != null) {
+      if (current.key.equals(key)) {
+        return true; 
+      }
+      return false;
+    }
+  }
+}
