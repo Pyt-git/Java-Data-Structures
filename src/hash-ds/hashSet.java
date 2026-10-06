@@ -12,3 +12,13 @@ public class MyHashSet<K> {
 
   public boolean contains(K key) {
     return map.containsKey(key); 
+  }
+
+  public int size() {
+    return map.size(); 
+  }
+
+  public boolean isEmpty() {
+    return size == 0;
+  }
+}
