@@ -159,9 +159,13 @@ public final class BinarySearchTree {
 
       Node<T> node = stack.pop(); 
       result.add(node.value); 
-          
-    
-   
-    
-      
-      
+      current = node.right; 
+    }
+    return Collections.unmodifiableList(result); 
+  }
+
+  public void clear() {
+    this.root = null; 
+    this.size = 0;
+  }
+}    
