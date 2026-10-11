@@ -151,6 +151,103 @@ public final class BinaryHeap<T> {
     this.elements.set(index, value); 
   }
 
-  
-  
-      
+  private void siftDown(int index) {
+    int size = this.element.size(); 
+
+    T value = elements.get(index); 
+    while (true) {
+      int leftIndex = leftChildIndex(index); 
+
+      if (leftIndex >= size) {
+        break; 
+      }
+      int rightIndex = rightchildIndex(index); 
+      int priorityChildIndex = leftIndex; 
+
+      if (rightIndex < size && compare(this.elements.get(rightIndex), this.elements.get(leftIndex)) < 0) {
+        priorityChildIndex = rightIndex; 
+      }
+      T priorityChild = this.elements.get(priorityChildIndex); 
+
+      if (compare(value, priorityChild) <= 0) {
+        break; 
+      }
+      this.elements.set(index, priorityChild); 
+      index = priorityChildIndex; 
+    }
+
+    this.elements.set(index, value); 
+  }
+
+  private T removeAt(int index) {
+    int lastIndex = this.elements.size() - 1; 
+    T removed = this.elements.get(index); 
+    T last = this.elements.remove(lastIndex); 
+
+    if (index == lastIndex) {
+      return removed; 
+    }
+    this.elements.set(index, last); 
+
+    if (index > 0 && compare(last, this.elements.get(parentIndex(index))) < 0) {
+      siftUp(index); 
+    } else {
+      siftDown(index); 
+    }
+    return removed; 
+  }
+
+  private void heapify() {
+    if (this.elements.size() < 2) {
+      return; 
+    }
+
+    int lastParent = parentIndex(this.elements.size() - 1); 
+    for (int index = lastParent; index >= 0; index--) {
+      siftDown(index); 
+    }
+  }
+
+  private int indexOf(T. value) {
+    for (int index = 0; index < this.elements.size(); index++) {
+      if (Objects.equals(this.elements.get(index), value)) {
+        return index;
+      }
+    }
+
+    return -1; 
+  }
+
+  private int compare(T first, T second) {
+    return this.comparator.compare(first, second); 
+  }
+
+  private static int parentIndex(int index) {
+    return (index - 1) / 2; 
+  }
+
+  private static int leftChildIndex(int index) {
+    return 2 * index + 1; 
+  }
+
+  private static int rightChildIndex(int index) {
+    return 2 * index + 2; 
+  }
+
+  public boolean isValidHeap() {
+    for (int parentIndex = 0; parentIndex < this.elements.size(); parentIndex++) {
+      int leftIndex = leftChildIndex(parentIndex); 
+      int rightIndex = rightChildIndex(parentIndex); 
+
+      if (leftIndex < this.elements.size() && compare(this.elements.get(parentIndex), this.elements.get(leftIndex)) > 0) {
+        return false; 
+      }
+
+      if (rightIndex < this.elements.size() && compare(this.elements.get(parentIndex), this.elements.get(rightIndex)) > 0) {
+        return false; 
+      }
+    }
+
+    return true; 
+  }
+}
