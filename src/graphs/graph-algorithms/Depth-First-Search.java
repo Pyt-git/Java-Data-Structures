@@ -14,3 +14,47 @@
 
 // Traversal order: [A, C, B, E, D] 
 
+import java.util.ArrayDeque; 
+import java.util.ArrayList; 
+import java.util.Deque; 
+import java.util.HashSet; 
+import java.util.List; 
+import java.util.Set; 
+import java.util.Objects; 
+
+public class DepthFirstSearch<T> {
+  private final AdjacencyMatrixGraph<T> graph; 
+
+  public DepthFirstSearch(AdjacencyMatrixGraph<T> graph) {
+    this.graph = graph; 
+  }
+
+  public List<T> traverse(T start) {
+    Objects.requireNonNull(start, "Start vertex cannot be null"); 
+
+    if (!graph.containsVertex(start)) {
+      throw new IllegalArgumentException("Vertex does not exist"); 
+    }
+
+    Deque<T> stack = new ArrayDeque<>(); 
+    Set<T> visited = new HashSet<>(); 
+    List traversalOrder = new ArrayList<>(); 
+
+    stack.push(start); 
+    visited.add(start); 
+
+    while (!stack.isEmpty()) {
+      T current = stack.pop(); 
+      traversalOrder.add(current); 
+
+      for (T neighbor : graph.neighborsOf(current)) {
+        if (!visited.contains(neighbor)) {
+          
+          visited.add(neighbor); 
+          stack.push(neighbor); 
+        }
+      }
+    }
+
+    return traversalOrder; 
+  }
