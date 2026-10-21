@@ -10,6 +10,11 @@
 // Processing: B -> A, C -> A, D -> B, E -> C, A -> null. 
 // call shortestPath(A, E) returns [E, C, A] and [A, C, E] after reversing. 
 
+// Example with FIFO: Let A discover B and C, B discover D and E. 
+// Let B be discovered before C and D discovered before E. 
+// From [A]: pop A. From [B, C]: pop B, then C. From [D, E]: pop D, then E. 
+// Traversal order: [A, B, C, D, E]
+
 import java.util.ArrayList; 
 import java.util.Set; 
 import java.util.HashSet; 
