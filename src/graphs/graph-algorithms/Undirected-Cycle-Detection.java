@@ -20,10 +20,10 @@
 import java.util.Set; 
 import java.util.HashSet; 
 
-public class CycleDetection<T> {
+public class UndirectedCycleDetection<T> {
   private final AdjacencyMatrixGraph<T> graph; 
 
-  public CycleDetection(AdjacencyMatrixGraph<T> graph) {
+  public UndirectedCycleDetection(AdjacencyMatrixGraph<T> graph) {
     this.graph = graph; 
   }
 
