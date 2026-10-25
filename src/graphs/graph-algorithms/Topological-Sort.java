@@ -66,7 +66,7 @@ public class TopologicalSort<T> {
   }
 
   private void dfs(T current, Set<T> visited, Deque<T> ordering) {
-    visited.add(current); \
+    visited.add(current); 
 
     for (T neighbor : graph.neighborsOf(current)) {
       if (!visited.contains(neighbor)) {
