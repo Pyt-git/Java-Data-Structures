@@ -7,6 +7,16 @@ Foundational data structure frameworks covered:
 - LinkedList;
 - Stack (LIFO);
 - Queue (FIFO);
-- Deque.
+- Deque;
+- HashMap;  
+- HashSet.
+
+These data structure frameworks form the foundation to more elaborated structures in the following sections. 
+
+Trees covered: 
+- Binary Search Tree;
+- Binary Heap
+
+
 
 
