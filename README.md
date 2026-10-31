@@ -6,7 +6,7 @@ Foundational data structure frameworks covered:
 - ArrayList;
 - LinkedList;
 - Stack (LIFO);
-- Queue (FIFO);
+- Queue (FIFO presented as a circular array); 
 - Deque;
 - HashMap;  
 - HashSet.
