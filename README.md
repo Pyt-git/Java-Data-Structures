@@ -1,11 +1,12 @@
 # Java-Data-Structures
 
-This repository contains data-structure frameworks implemented from first principles using Java as the language. This repository will start with the implementation of commonly-used foundational data structures. It then concludes with custom data-structure frameworks inspired by the foundational ones. 
+This repository contains foundational data structure frameworks implemented from first principles using Java as the language. Then, it will explore standard tree structures and graph algorithms and game theoretic algorithms built using the foundation. 
 
-Foundational data structures in this repository include: 
+Foundational data structure frameworks covered: 
 - ArrayList;
 - LinkedList;
-- Stack;
-- Hash maps, and others.
+- Stack (LIFO);
+- Queue (FIFO);
+- Deque.
 
-Custom data structures remain to be determined. 
+
