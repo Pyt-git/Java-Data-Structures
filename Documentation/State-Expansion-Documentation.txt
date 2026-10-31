@@ -39,4 +39,6 @@ Then boards generated from Move 1, Move 2 and Move 3 are child states by state e
 Second minimax invariant: The children of a game-state node are exactly the states reachable by one legal move from that state. 
 
 References: 
-
+SAKOS, Iosif; "Lecture 13 - Foundations of Extensive Form Games"; November 6, 2025.
+KROER, Christian; "Lecture Note 6: Extensive-Form Games"; February 6, 2022.
+National Taiwan University; "ECON 4037 Chapter 2 The Extensive Form".
