@@ -14,8 +14,24 @@ Foundational data structure frameworks covered:
 These data structure frameworks form the foundation to more elaborated structures in the following sections. 
 
 Trees covered: 
+- AVL tree; 
 - Binary Search Tree;
-- Binary Heap
+- Binary Heap.
+
+These structures lay out the foundation for advanced graph data structures and algorithms such as Dijkstra. 
+
+Graph data structure frameworks covered: 
+- Trie: finding the unique path for a word from the root to its end;
+- Adjacency list graph;
+- Adjacency matrix graph: matrix representation of a graph where rows are the starting vertices and columns are the destination. This framework determines whether a neighboring vertex is reachable from a starting vertex with bit encoding in binary. Such framework are used in unweighted graph algorithms via object collaboration.
+
+Unweighted graph algorithms covered: 
+- Breadth first search (BFS): Explores vertex depth by level to find the shortest unweighted path between a starting vertex and its destination.
+- Depth first search (DFS): Used in subsequent graph algorithms.
+- Connected components:
+- Undirected cycle detection: detects cycles 
+- 
+
 
 
 
