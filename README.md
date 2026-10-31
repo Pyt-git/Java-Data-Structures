@@ -29,8 +29,9 @@ Unweighted graph algorithms covered:
 - Breadth first search (BFS): Explores vertex depth by level to find the shortest unweighted path between a starting vertex and its destination.
 - Depth first search (DFS): Used in subsequent graph algorithms.
 - Connected components:
-- Undirected cycle detection: detects cycles 
-- 
+- Undirected cycle detection: detects cycles by tracking visited vertices;
+- Directed cycle detection: detects cycles by tracking active DFS calls via a recursion stack;
+- Topological sort: 
 
 
 
