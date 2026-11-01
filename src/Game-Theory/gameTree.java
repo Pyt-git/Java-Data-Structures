@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Objects; 
 
 public final class GameTree<T> {
-  private static final class Node<T> {
+  public static final class Node<T> {
 
     private final T state; 
     private final Player player; 
@@ -15,7 +15,23 @@ public final class GameTree<T> {
     private Node(T state, Player player) {
       this.state = state; 
       this.player = player; 
-      this.children = new ArrayList<>(); 
+      this.children = new ArrayList<>();
+    }
+
+    public Player getPlayer() {
+      return player; 
+    }
+
+    public T getState() {
+      return state; 
+    }
+
+    public List<Node<T>> getChildren() {
+      return children; 
+    }
+
+    public Integer getPayoff() {
+      return payoff;
     }
   }
 
