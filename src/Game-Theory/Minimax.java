@@ -19,4 +19,18 @@ public final class Minimax<T> {
     if (node.getPlayer() == Player.MAX) {
       int bestValue = Integer.MIN_VALUE;
 
-      for (Node<T> child : node.getChildren
+      for (Node<T> child : node.getChildren()) {
+        bestValue = Math.max(bestValue, minimax(child)); 
+      }
+
+      return bestValue; 
+    }
+
+    int bestValue = Integer.MAX_VALUE; 
+    for (Node<T> child : node.getChildren()) {
+      bestValue = Math.min(bestValue, minimax(child)); 
+    }
+
+    return bestValue; 
+  }
+}
