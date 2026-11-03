@@ -1,12 +1,24 @@
-public final class TicTacToeAI {
-  private final TicTacToeBoard<T> board; 
+public final class TicTacToeAI { 
 
-  public TicTacToeAI(TicTacToeBoard<T> board) {
-    this.board = board; 
-  }
-
-  public Move findBestMove() {
+  public Move findBestMove(TicTacToeBoard) {
     Move bestMove = null; 
 
     int bestValue = Integer.MIN_VALUE; 
-    for (Move move : board.getAvailableMoves
+    for (Move move : board.getAvailableMoves()) {
+      
+      TicTacToeBoard<T> child = new TicTacToeBoard(board); 
+      child.makeMove(move, Mark.X); 
+
+      int value = alphaBeta(child, false, Integer.MIN_VALUE, Integer.MAX_VALUE); 
+      if (value > bestValue) {
+
+        bestValue = value; 
+        bestMove = move; 
+      }
+    }
+
+    return bestMove; 
+  }
+
+  private int alphaBeta(
+    
