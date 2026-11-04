@@ -16,6 +16,7 @@ Example:
     Attack   Defend
     /   \     /  \
    X    Y    X    Y
+  +3   -1   +5   -10
 ```
 Pick one path and tree means: start -> Attack -> opponent chooses move X -> payoff = +3 (one complete play of the game). 
 Game tree invariant: A game tree is a tree whose nodes are game states, whose edges are actions, and whose leaves represent payoffs. 
