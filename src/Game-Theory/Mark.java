@@ -1,4 +1,4 @@
-// helpers for tic-tac-toe AI. 
+// Mark helper for TicTacToeAI
 
 public enum Mark {
   X,
