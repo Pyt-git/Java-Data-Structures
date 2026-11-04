@@ -62,14 +62,15 @@ public final class TicTacToeAI {
 }
 
 // Example game with AI: 
+class TicTacToeMain {
+  public static void Main(String[] args) {
+    TicTacToeBoard board = new TicTacToeBoard(); 
+    TicTacToeAI ai = new TicTacToeAI(); 
 
-public static void Main(String[] args) {
-  TicTacToeBoard board = new TicTacToeBoard(); 
-  TicTacToeAI ai = new TicTacToeAI(); 
+    board.makeMove(new Move(1, 1), Mark.O); 
+    Move bestMove = ai.findBestMove(board); 
 
-  board.makeMove(new Move(1, 1), Mark.O); 
-  Move bestMove = ai.findBestMove(board); 
-
-  board.makeMove(bestMove, Mark.X); 
-  System.out.println(board); 
+    board.makeMove(bestMove, Mark.X); 
+    System.out.println(board); 
+  }
 }
