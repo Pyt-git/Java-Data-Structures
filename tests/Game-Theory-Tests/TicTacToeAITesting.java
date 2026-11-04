@@ -21,5 +21,22 @@ class TicTacToeAITest {
     assertTrue(board.isLegalMove(best)); 
   }
 
-  
-    
+  @Test
+  void takesTheWin() {
+    play(0, 0, 1, 0, 0, 1, 1, 1); 
+    assertEquals(new Move(0, 2), ai.findBestMove(board)); 
+  }
+
+  @Test 
+  void blocksTheThreat() {
+    play(1, 1, 0, 0, 2, 2, 0, 1); 
+    assertEquals(new Move(0, 2), ai.findBestMove(board)); 
+  }
+
+  @Test 
+  void neverLosesAgainstAnyOpponentLine() {
+    int[] oWins = {0};
+    playOut(new TicTacToeBoard(), oWins); 
+    assertEquals(0, oWins[0]); 
+  }
+}
