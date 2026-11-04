@@ -1,9 +1,9 @@
-private final class TicTacToeBoard {
+public final class TicTacToeBoard {
   private static final int SIZE = 3; 
   private final Mark[][] board; 
 
-  public TicTacToeBoard() {
-    board new Mark[SIZE][SIZE]; 
+  pucblic TicTacToeBoard() {
+    this.board = new Mark[SIZE][SIZE]; 
 
     for (int row = 0; row < SIZE; row++) {
       for (int col = 0; col < SIZE; col++) {
@@ -78,7 +78,7 @@ private final class TicTacToeBoard {
     return false; 
   }
 
-  private boolean checkRows(Mark mark) {
+  private boolean checkDiagonals(Mark mark) {
      return (board[0][0] == mark &&
              board[1][1] == mark &&
              board[2][2] == mark) 
