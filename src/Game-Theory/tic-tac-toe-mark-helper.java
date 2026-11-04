@@ -6,6 +6,3 @@ public enum Mark {
   EMPTY
 }
 
-public record Move(
-  int row, 
-  int column) {}
