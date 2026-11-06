@@ -97,7 +97,7 @@ public class MyLinkedList<E> {
   public E removeWithIndex(int index) {
     checkIndex(index); 
 
-    if (index == 0) return removeFIrst(); 
+    if (index == 0) return removeFirst(); 
     if (index == size - 1) return removeLast(); 
 
     Node<E> current = head;
