@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Queue {
   private int[] data; 
   private int front; 
@@ -61,7 +63,7 @@ public class Queue {
   public String toString() {
     StringBuilder sb = new StringBuilder(); 
     sb.append("["); 
-    for (int i = 0l i < size, i++) {
+    for (int i = 0; i < size, i++) {
       int index = (front + i) % data.length; 
       sb.append(data[index]); 
       if (i < size - 1) {
