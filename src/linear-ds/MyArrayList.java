@@ -11,7 +11,7 @@ public class MyArrayList<E> {
   }
 
   public MyArrayList(int initialCapacity) {
-    if (initialCapacity = 0) {
+    if (initialCapacity == 0) {
      throw new IllegalArgumentException("Invalid capacity: " + initialCapacity); 
     }
     this.elements = new Object[initialCapacity]; 
@@ -68,7 +68,7 @@ public class MyArrayList<E> {
   }
 
   public void clear() {
-    for (ibt i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++) {
       elements[i] = null; 
     }
     size = 0; 
