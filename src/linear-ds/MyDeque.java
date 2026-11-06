@@ -1,3 +1,5 @@
+import java.util.Arrays; 
+
 public class MyDeque<E> {
   private E[] data; 
   private int front; 
@@ -29,7 +31,7 @@ public class MyDeque<E> {
     E[] newData = (E[]) new Object[newCap];
 
     for (int i = 0; i < size; i++) {
-      newData[i] = data[(front + i) % capacity]); 
+      newData[i] = data[(front + i) % capacity]; 
     }
 
     data = newData; 
@@ -93,7 +95,7 @@ public class MyDeque<E> {
 
     int[] arr = new int[size]; 
 
-    for (i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++) {
       arr[i] = this.removeFirst(); 
     }
 
