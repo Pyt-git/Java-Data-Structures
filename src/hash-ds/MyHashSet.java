@@ -1,6 +1,8 @@
+import java.util.HashMap
+
 public class MyHashSet<K> {
   private static final Object PRESENT = new Object(); 
-  private final MyHashMap<K, Object> map = new HashMap<>(); 
+  private final MyHashMap<K, Object> map = new HashMap<>(10); 
 
   public boolean add(K key) {
     return map.put(key, PRESENT) == null; // check necessity of add execution
