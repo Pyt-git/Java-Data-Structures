@@ -24,6 +24,4 @@ class MyArrayListTest {
     assertEquals(0, list.size()); 
     assertTrue(list.isEmpty()); 
   }
-
-  void removingPreservesOrder() {
-    
+}
