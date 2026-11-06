@@ -47,6 +47,8 @@ public class MyHashMap<K, V> {
     if ((double) size / capacity > LOAD_FACTOR) {
       resize(); 
     }
+
+    return null;
   }
 
   public V get(K key) {
@@ -91,7 +93,7 @@ public class MyHashMap<K, V> {
     buckets = (Node<K, V>[]) new Node[capacity]; 
     size = 0; 
 
-    for (int i = 0, i < oldCapacity; i++) {
+    for (int i = 0; i < oldCapacity; i++) {
       Node<K, V> head = oldBuckets[i]; 
       while (head != null) {
         put(head.key, head.value); 
@@ -112,7 +114,8 @@ public class MyHashMap<K, V> {
       if (current.key.equals(key)) {
         return true; 
       }
-      return false;
     }
+
+    return false; 
   }
 }
