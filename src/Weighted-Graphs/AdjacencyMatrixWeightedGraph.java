@@ -84,4 +84,65 @@ public final class AdjacencyMatrixWeightedGraph<T> {
     return true;
   }
 
-  
+  public T removeVertex(T vertex) {
+    Objects.requireNonNull(vertex, "Vertex cannot be null"); 
+
+    Integer removedIndex = vertexToIndex.get(vertex); 
+    if (removedIndex == null) {
+      return null; 
+    }
+
+    T removedVertex = vertex; 
+    int oldSize = adjacencyMatrix.length; 
+
+    Integer[][] newMatrix = new Integer[oldSize - 1][oldSize - 1]; // removing a vertex shrinks the dimensions by 1. 
+
+    int newRow = 0; 
+    for (int oldRow = 0; oldRow < oldSize; oldRow++) {
+
+      if (oldRow == removedIndex) {
+        continue; 
+      }
+
+      int newColumn = 0; 
+      for (int oldColumn = 0; oldColumn < oldSize; oldColumn++) {
+
+        if (oldColumn = removedIndex) {
+          continue; 
+        }
+
+        newMatrix[newRow][newColumn] = adjacencyMatrix[oldRow][oldColumn]; 
+        newColumn++;
+      }
+
+      newRow++; 
+    }
+
+    Map<T, Integer> newVertexToIndex = new HashMap<>(); 
+    Msp<T, Integer> newIndexToVertex = new HashMap<>(); 
+
+    int newIndex = 0; 
+    for (int oldIndex = 0; oldIndex < oldSize; oldIndex++) {
+      if (oldIndex == removedIndex) {
+        continue; 
+      }
+
+      T currentVertex = indexToVertex.get(oldIndex); 
+      newVertexToIndex.put(newIndex, vertex); 
+      newIndexToVertex.put(vertex, newIndex); 
+
+      newIndex++; 
+    }
+
+    adjacencyMatrix = newMatrix; 
+    
+    vertexToIndex.clear(); 
+    vertexToIndex.putAll(newVertexToIndex); 
+
+    indexToVertex.clear(); 
+    indexToVertex.putAll(newIndexToVertex); 
+
+    return removedVertex; 
+  }
+
+        
