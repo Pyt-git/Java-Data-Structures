@@ -6,6 +6,25 @@
 
 // Worked example: 
 
+// Let adjacency matrix be: 
+//   A  B  C  D
+// A -  6  5  -
+// B 6  -  0  -
+// C 5  0  -  1
+// D -  -  1  -
+
+// Then, the graph represented is: 
+// A <--6--> B
+//   \      /
+//    5    0
+//     \  /
+//      C
+//      |
+//      1
+//      |
+//      D
+
+import java.util.Objects; 
 import java.util.Map; 
 import java.util.HasMap; 
 
