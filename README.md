@@ -35,13 +35,14 @@ Unweighted graph algorithms covered:
 
 Weighted graph algorithms covered: 
 - Dijkstra: Finds the shortest weighted path. A shortest path in BFS is not necessarily a shortest path in Dijkstra.
+- Matrix representation of a weighted graph (backbone architecture): A square matrix where each cell adjacencyMatrix[sourceIndex][destinationIndex] represents an edge's weight. Based on a new architecture: removing or adding a graph component changes the matrix's size instead of yielding free indices.
 - Other weighted graph algorithms remain to be determined.
 
 Game AI algorithms covered: 
-- Game tree: description to be added;
-- Minimax: description to be added;
-- Alpha-Beta pruning: description to be added;
-- Tic-tac-toe AI: description to be added;
+- Game tree: Representation of a sequence of possible moves by a player with leaves as payoffs;
+- Minimax: Finds the best decision that a specific player (MAX or MIN) can make. Works bottom-up;
+- Alpha-Beta pruning: Optimizer-like algorithm that eliminates unnecessary branches of a Minimax tree;
+- Tic-tac-toe AI: deterministic AI programmed to never lose a Tic-Tac-Toe game. Scans available moves and finds the best one via alpha-beta pruning.
 
 Such game AIs are implemented using game theory principles and mechanisms:
 - Prisoner's dilemma to find opponent's best reply;
