@@ -138,7 +138,7 @@ public final class AdjacencyMatrixWeightedGraph<T> {
     }
 
     Map<T, Integer> newVertexToIndex = new HashMap<>(); 
-    Msp<T, Integer> newIndexToVertex = new HashMap<>(); 
+    Map<T, Integer> newIndexToVertex = new HashMap<>(); 
 
     int newIndex = 0; 
     for (int oldIndex = 0; oldIndex < oldSize; oldIndex++) {
@@ -163,5 +163,31 @@ public final class AdjacencyMatrixWeightedGraph<T> {
 
     return removedVertex; 
   }
+  
+  public boolean containsVertex(T vertex) {
+    return vertexToIndex.containsKey(vertex); 
+  }
 
-        
+  public boolean containsEdge(T source, T destination) {
+    Integer sourceIndex = vertexToIndex.get(source); 
+    Integer destinationIndex = vertexToIndex.get(destination); 
+
+    if (sourceIndex == null || destinationIndex == null) {
+      return false; 
+    }
+
+    return adjacencyMatric[sourceIndex][destinationIndex] != null; 
+  }
+
+  public Integer getWeight(T source, T destination) {
+    Integer sourceIndex = vertexToIndex.get(source); 
+    Integer destinationIndex = vertexToIndex.get(destination); 
+
+    if (sourceIndex == null || destinationIndex == null) {
+      return null; 
+    }
+
+    return adjacencyMatrix[sourceIndex][destinationIndex]; 
+  }
+
+  public Collection<Weighted<T>>
