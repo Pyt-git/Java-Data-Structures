@@ -45,6 +45,6 @@ Game AI algorithms covered:
 - Tic-tac-toe AI: deterministic AI programmed to never lose a Tic-Tac-Toe game. Scans available moves and finds the best one via alpha-beta pruning.
 
 Such game AIs are implemented using game theory principles and mechanisms:
-- Prisoner's dilemma to find opponent's best reply;
+- Prisoner's dilemma to find opponent's possible replies to a specific move; 
 - Dominance principle to find the strategy with the best payoff for a player;
 - Best Response and Nash equilibrium.
