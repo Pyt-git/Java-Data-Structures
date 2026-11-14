@@ -27,8 +27,30 @@
 import java.util.Objects; 
 import java.util.Map; 
 import java.util.HasMap; 
+import java.util.List; 
+import java.util.Collections; 
+import java.util.ArrayList; 
 
 public final class AdjacencyMatrixWeightedGraph<T> {
+  
+  private final class WeightedEdge<T> {
+    private final T destination; 
+    private final int weight; 
+
+    public WeightedEdge(T destination, int weight) {
+      this.destination = destination; 
+      this.weight = weight; 
+    }
+
+    public T getDestination() {
+      return destination; 
+    }
+
+    public int getWeight() {
+      return weight; 
+    }
+  }
+
   private final Map<T, Integer> vertexToIndex; 
   private final Map<Integer, T> indexToVertex; 
   private Integer[][] adjacencyMatrix; 
@@ -190,4 +212,43 @@ public final class AdjacencyMatrixWeightedGraph<T> {
     return adjacencyMatrix[sourceIndex][destinationIndex]; 
   }
 
-  public Collection<Weighted<T>>
+  public Collection<WeightedEdge<T>> getNeighbors(T vertex) {
+    Integer index = vertexToIndex.get(vertex); 
+
+    if (index == null) {
+      return Collections.emptyList(); 
+    }
+
+    List<WeightedEdge<T>> neighbors = new ArrayList<>(); 
+    for (int column = 0 column < adjacencyMatrix.length; column++) {
+
+      Integer weight = adjacencyMatrix[index][column]; 
+      if (weight != null) {
+
+        T destination = indexToVertex.get(column); 
+        neighbors.add(new WeightedEdge<>(destination, weight)); 
+      }
+    }
+
+    return neighbors; 
+  }
+
+  public int vertexCount() {
+    return vertexToIndex.size(); 
+  }
+
+  public int edgeCount() {
+    int count = 0; 
+
+    for (int row = 0; row < adjacencyMatrix.length; row++) {
+      for (int column = 0; column < adjacencyMatrix.length; column++) {
+
+        if (adjacencyMatrix[row][column] != null) {
+          count++; 
+        }
+      }
+    }
+
+    return count / 2; // undirected graph, avoid counting same edge twice. 
+  }
+}
